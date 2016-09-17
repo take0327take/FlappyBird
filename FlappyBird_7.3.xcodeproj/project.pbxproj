@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FB174D481D89954B00901684 /* item.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FB174D471D89954B00901684 /* item.mp3 */; };
-		FB174D4A1D89963A00901684 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FB174D491D89963A00901684 /* background.mp3 */; };
-		FB174D4C1D89A20300901684 /* fly.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FB174D4B1D89A20300901684 /* fly.mp3 */; };
+		FB81C4C51D8D597D00AD0A62 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FB81C4C21D8D597C00AD0A62 /* background.mp3 */; };
+		FB81C4C61D8D597D00AD0A62 /* fly.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FB81C4C31D8D597C00AD0A62 /* fly.mp3 */; };
+		FB81C4C71D8D597D00AD0A62 /* item.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FB81C4C41D8D597C00AD0A62 /* item.mp3 */; };
 		FBF023891D8975C100A768D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF023881D8975C100A768D9 /* AppDelegate.swift */; };
 		FBF0238B1D8975C100A768D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF0238A1D8975C100A768D9 /* ViewController.swift */; };
 		FBF0238E1D8975C100A768D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF0238C1D8975C100A768D9 /* Main.storyboard */; };
@@ -20,9 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FB174D471D89954B00901684 /* item.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = item.mp3; path = ../../../Downloads/get_3/item.mp3; sourceTree = "<group>"; };
-		FB174D491D89963A00901684 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = background.mp3; path = ../../../Desktop/background.mp3; sourceTree = "<group>"; };
-		FB174D4B1D89A20300901684 /* fly.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = fly.mp3; path = ../../../Downloads/fly.mp3; sourceTree = "<group>"; };
+		FB81C4C21D8D597C00AD0A62 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
+		FB81C4C31D8D597C00AD0A62 /* fly.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fly.mp3; sourceTree = "<group>"; };
+		FB81C4C41D8D597C00AD0A62 /* item.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = item.mp3; sourceTree = "<group>"; };
 		FBF023851D8975C100A768D9 /* FlappyBird_7.3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappyBird_7.3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF023881D8975C100A768D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBF0238A1D8975C100A768D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,9 +73,9 @@
 				FBF0238F1D8975C100A768D9 /* Assets.xcassets */,
 				FBF023911D8975C100A768D9 /* LaunchScreen.storyboard */,
 				FBF023941D8975C100A768D9 /* Info.plist */,
-				FB174D471D89954B00901684 /* item.mp3 */,
-				FB174D491D89963A00901684 /* background.mp3 */,
-				FB174D4B1D89A20300901684 /* fly.mp3 */,
+				FB81C4C21D8D597C00AD0A62 /* background.mp3 */,
+				FB81C4C31D8D597C00AD0A62 /* fly.mp3 */,
+				FB81C4C41D8D597C00AD0A62 /* item.mp3 */,
 			);
 			path = FlappyBird_7.3;
 			sourceTree = "<group>";
@@ -138,12 +138,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB174D4C1D89A20300901684 /* fly.mp3 in Resources */,
+				FB81C4C51D8D597D00AD0A62 /* background.mp3 in Resources */,
+				FB81C4C61D8D597D00AD0A62 /* fly.mp3 in Resources */,
 				FBF023931D8975C100A768D9 /* LaunchScreen.storyboard in Resources */,
-				FB174D4A1D89963A00901684 /* background.mp3 in Resources */,
-				FB174D481D89954B00901684 /* item.mp3 in Resources */,
 				FBF023901D8975C100A768D9 /* Assets.xcassets in Resources */,
 				FBF0238E1D8975C100A768D9 /* Main.storyboard in Resources */,
+				FB81C4C71D8D597D00AD0A62 /* item.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
