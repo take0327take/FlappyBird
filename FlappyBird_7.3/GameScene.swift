@@ -63,7 +63,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate,AVAudioPlayerDelegate {
         addChild(scrollNode)
         
         wallNode = SKNode()
-        addChild(wallNode)
+        scrollNode.addChild(wallNode)
         
         bird = SKSpriteNode()
         addChild(bird)
@@ -75,7 +75,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate,AVAudioPlayerDelegate {
         addChild(bestScoreLabelNode)
         
         itemScoreNode = SKNode()
-        addChild(itemScoreNode)
+        scrollNode.addChild(itemScoreNode)
         
         itemScoreLabelNode = SKLabelNode()
         addChild(itemScoreLabelNode)
