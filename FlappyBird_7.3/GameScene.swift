@@ -221,13 +221,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate,AVAudioPlayerDelegate {
             self.runAction(action)
             
             // 自身を取り除くアクションを作成
-            let removeItem = SKAction.removeFromParent()
+//            let removeItem = SKAction.removeFromParent()
+            contact.bodyA.node?.removeFromParent()
             
-            // 2つのアニメーションを順に実行するアクションを作成
-            let itemAnimation = SKAction.sequence([removeItem])
+//            // 2つのアニメーションを順に実行するアクションを作成
+//            let itemAnimation = SKAction.sequence([removeItem])
 
-            let item = SKNode()
-            item.runAction(itemAnimation)
+//            let item = SKNode()
+//            item.runAction(itemAnimation)
             
         }
             
@@ -474,7 +475,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate,AVAudioPlayerDelegate {
             let random_y = arc4random_uniform( UInt32(random_y_range) )
             
             // Y軸の下限にランダムな値を足して、下の壁のY座標を決定
-            let under_item_y = CGFloat(under_item_lowest_y + random_y)
+            _ = CGFloat(under_item_lowest_y + random_y)
 
             /*
              ** x軸設定
@@ -492,7 +493,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate,AVAudioPlayerDelegate {
             let random_x = arc4random_uniform( UInt32(random_x_range) )
             
             // X軸の下限にランダムな値を足して、下の壁のY座標を決定
-            let under_item_x = CGFloat(random_x)
+            _ = CGFloat(random_x)
 
 
             
@@ -510,39 +511,52 @@ class GameScene: SKScene, SKPhysicsContactDelegate,AVAudioPlayerDelegate {
 //            under.physicsBody?.dynamic = false
 
             
-            // 上側のitemを作成
-            let upper = SKSpriteNode(texture: itemTexture)
-            upper.position = CGPoint(x: under_item_x + itemTexture.size().width,
-                y: under_item_y + itemTexture.size().height)
+//            // 上側のitemを作成
+//            let upper = SKSpriteNode(texture: itemTexture)
+//            upper.position = CGPoint(x: under_item_x + itemTexture.size().width,
+//                y: under_item_y + itemTexture.size().height)
+//            
+//            //スプライトに物理演算を設定
+//            upper.physicsBody = SKPhysicsBody(rectangleOfSize: itemTexture.size())
+//            upper.physicsBody?.categoryBitMask = self.itemScoreCategory
+//            
+//            //衝突時に動かないように設定
+//            upper.physicsBody?.dynamic = false
+//            
+//            item.addChild(upper)
+//            // スコアアップ用のノード
+//            let itemScoreNode = SKNode()
+//            itemScoreNode.position = CGPoint(x: upper.size.width + self.bird.size.width / 2, y: self.frame.height / 2.0)
+//            itemScoreNode.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: upper.size.width, height: self.frame.size.height))
+//            itemScoreNode.physicsBody?.dynamic = false
+//            itemScoreNode.physicsBody?.categoryBitMask = self.itemScoreCategory
+//            itemScoreNode.physicsBody?.contactTestBitMask = self.birdCategory
+//
+//            item.addChild(itemScoreNode)
             
-            //スプライトに物理演算を設定
-            upper.physicsBody = SKPhysicsBody(rectangleOfSize: itemTexture.size())
-            upper.physicsBody?.categoryBitMask = self.itemScoreCategory
+            let item_lowest_y = UInt32( center_y - itemTexture.size().height / 2 -  random_y_range / 2)
+            let item_y = CGFloat(item_lowest_y + random_y)
             
-            //衝突時に動かないように設定
-            upper.physicsBody?.dynamic = false
+            let itemApple = SKSpriteNode(texture: itemTexture)
+            itemApple.position = CGPoint(x: 0.0, y: item_y)
+            itemApple.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: itemApple.size.width, height: itemApple.size.height))
+            itemApple.physicsBody?.dynamic = false
+            itemApple.physicsBody?.categoryBitMask = self.itemScoreCategory
+            itemApple.physicsBody?.contactTestBitMask = self.birdCategory
             
-            item.addChild(upper)
+            item.addChild(itemApple)
+ 
             
-            // スコアアップ用のノード
-            let itemScoreNode = SKNode()
-            itemScoreNode.position = CGPoint(x: upper.size.width + self.bird.size.width / 2, y: self.frame.height / 2.0)
-            itemScoreNode.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: upper.size.width, height: self.frame.size.height))
-            itemScoreNode.physicsBody?.dynamic = false
-            itemScoreNode.physicsBody?.categoryBitMask = self.itemScoreCategory
-            itemScoreNode.physicsBody?.contactTestBitMask = self.birdCategory
-            
-            item.addChild(itemScoreNode)
             
             item.runAction(itemAnimation)
             
             self.itemScoreNode.addChild(item)
         })
         
-        // 次の壁作成までの待ち時間のアクションを作成
+        // 次のitem作成までの待ち時間のアクションを作成
         let waitAnimation = SKAction.waitForDuration(2)
         
-        // 壁を作成->待ち時間->壁を作成を無限に繰り替えるアクションを作成
+        // itemを作成->待ち時間->壁を作成を無限に繰り替えるアクションを作成
         let repeatForeverAnimation = SKAction.repeatActionForever(SKAction.sequence([createItemAnimation, waitAnimation]))
         
         runAction(repeatForeverAnimation)
